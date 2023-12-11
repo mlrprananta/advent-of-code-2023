@@ -2,7 +2,7 @@ package day1
 
 
 class Solution {
-    private val inputStream = this::class.java.getResourceAsStream("/day1/input1.txt")
+    private val inputStream = this::class.java.getResourceAsStream("/day1/input1")
 
     fun solve(): Int {
         var sum = 0;
