@@ -12,13 +12,20 @@ class Solution {
     fun solve(): Int {
         val lines = inputStream.bufferedReader().readLines();
         val groupIdRegex = """Game (?<groupId>\d+):""".toRegex();
-
         var sum = 0;
         for (line in lines) {
             val groupId = groupIdRegex.find(line)!!.groups["groupId"]!!.value.toInt();
-//            if (isPossible(line)) {
-//                sum += groupId
-//            }
+            if (isPossible(line)) {
+                sum += groupId
+            }
+        }
+        return sum;
+    }
+
+    fun solve2(): Int {
+        val lines = inputStream.bufferedReader().readLines();
+        var sum = 0;
+        for (line in lines) {
             sum += extractPower(line);
         }
         return sum;
