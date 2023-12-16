@@ -112,7 +112,7 @@ class Solution {
         for ((index, result) in results.withIndex()) {
             val value = result.value.toULong()
             if ((index + 1) % 2 == 0) {
-                seeds.add(ULongRange(last!!, last+value))
+                seeds.add(ULongRange(last!!, last + value))
             } else {
                 last = value
             }
