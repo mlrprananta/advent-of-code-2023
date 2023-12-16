@@ -5,6 +5,8 @@ import day4.Solution as Day4Solution
 import day5.Solution as Day5Solution
 import day6.Solution as Day6Solution
 
+import day8.Solution as Day8
+
 fun main() {
     val day1Solution = Day1Solution();
     val day2Solution = Day2Solution();
@@ -13,5 +15,7 @@ fun main() {
     val day5Solution = Day5Solution();
     val day6Solution = Day6Solution();
 
-    println(day6Solution.solve2("/day6/input1"))
+    val day8 = Day8("/day8/input1");
+
+    println(day8.solvePart2())
 }
