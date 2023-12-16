@@ -32,7 +32,7 @@ class Solution(resourcePath: String) : BaseSolution(resourcePath) {
         return steps
     }
 
-    fun solvePart2(): Int {
+    fun solvePart2(): Long {
         val path = reader.readLine().toCharArray().toList()
         val neighbours = hashMapOf<String, List<String>>()
 
@@ -49,17 +49,17 @@ class Solution(resourcePath: String) : BaseSolution(resourcePath) {
         }
 
         val currentNodes = neighbours.keys.filter { node -> node.toCharArray()[2] == 'A' }.toMutableList()
-        var steps = 0
+        var steps = 0L
 
         println(currentNodes)
 
         while (!currentNodes.all { node -> node.toCharArray()[2] == 'Z' }) {
             for ((index, node) in currentNodes.withIndex()) {
-                val direction = if (path[steps % path.size] == 'L') 0 else 1
+                val direction = if (path[(steps % path.size).toInt()] == 'L') 0 else 1
                 currentNodes[index] = neighbours[node]!![direction]
             }
             steps++
-            print("$currentNodes\r")
+            print("$currentNodes $steps\r")
         }
 
         return steps
